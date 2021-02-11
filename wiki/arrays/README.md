@@ -11,7 +11,7 @@ Arrays Are used to store multiple values in a single variable instead of declari
 To declare an array, define the variable type with [ ] (square brackets).
 For Example : 
 
-`int[] variableName;` 
+`variableType[] variableName;` 
 
 or
  
@@ -23,4 +23,4 @@ To find length of an array, use `length` property of the arrays.
 
 For Example :
 
-`int arrayLength = arrayName,length;`
+`int arrayLength = arrayName.length;`
