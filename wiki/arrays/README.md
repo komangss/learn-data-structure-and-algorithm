@@ -24,3 +24,9 @@ To find length of an array, use `length` property of the arrays.
 For Example :
 
 `int arrayLength = arrayName.length;`
+<br/><br/>
+**Time Complexity**
+- Lookup / get = constant / O(1)
+- Insert = Linear / O(n)
+- Delete = Linear / O(n)
+- getIndexOf = Linear / O(n{
