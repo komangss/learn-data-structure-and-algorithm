@@ -52,4 +52,8 @@ public class LinkedList {
       }
       return -1;
     }
+    
+    // Practice 1 : Print middle element of linked list
+    public void printMiddle() {
+    }
 }
