@@ -10,11 +10,10 @@ public class MainLinkedList {
      ll.addLast(30);
      ll.addLast(40);
      ll.addLast(50);
-     ll.addFirst(60);
-     ll.addFirst(70);
+     ll.addLast(60);
      
      System.out.println(ll.indexOf(70));
+     ll.printMiddle();
   }
 
 }
-,

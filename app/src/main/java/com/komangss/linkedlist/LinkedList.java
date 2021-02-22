@@ -55,5 +55,13 @@ public class LinkedList {
     
     // Practice 1 : Print middle element of linked list
     public void printMiddle() {
+    // use 2 pointer, one is to check the end and one is on the middle
+        Node next = first;
+        Node curr = first;
+        while (next != null && next.next != null) {
+          curr = curr.next;
+          next = next.next.next;
+        }
+        System.out.println(curr.value);
     }
 }
