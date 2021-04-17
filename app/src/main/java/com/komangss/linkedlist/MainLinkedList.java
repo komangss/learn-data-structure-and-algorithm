@@ -11,8 +11,11 @@ public class MainLinkedList {
      ll.addLast(40);
      ll.addLast(50);
      ll.addLast(60);
+ 
+     ll.removeLast();
      
-     System.out.println(ll.indexOf(70));
+     System.out.println(ll.indexOf(50));
+     System.out.println(ll.size());
      ll.printMiddle();
   }
 

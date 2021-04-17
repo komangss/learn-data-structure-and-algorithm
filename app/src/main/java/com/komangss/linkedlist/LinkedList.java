@@ -1,5 +1,8 @@
 package com.komangss.linkedlist;
 
+import java.util.NoSuchElementException;
+
+
 public class LinkedList {
 
     private class Node {
@@ -12,6 +15,7 @@ public class LinkedList {
 
     private Node first;
     private Node last;
+    private int size;
     
     public void addLast(int x) {
       Node n = new Node(x);
@@ -19,11 +23,9 @@ public class LinkedList {
         first = last = n;
       } else {
         last.next = n;
-        System.out.println("F " + first.next+ "v " + first.next.value);
-        if(x == 40) System.out.println(first.next.next.value);
-        System.out.println("L " + last.next + "v " + last.next.value);
         last = n;
       }
+      size++;
     }
     
     public void addFirst(int x) {
@@ -34,6 +36,7 @@ public class LinkedList {
         n.next = first;
         first = n;
       }
+      size++;
     }
     
     public boolean isEmpty() {
@@ -63,5 +66,44 @@ public class LinkedList {
           next = next.next.next;
         }
         System.out.println(curr.value);
+    }
+    
+    public int size() {
+      if (isEmpty())
+         throw new NoSuchElementException();
+         
+      return size;
+    }
+    
+    public void removeFirst() {
+      if(isEmpty())
+        throw new NoSuchElementException();
+        
+      // Warning = can cause memory leak
+      // first = first.next;
+      
+      Node temp = first.next;
+      first.next = null;
+      first = temp;
+      
+      size--;
+    }
+    
+    public void removeLast() {
+      if (first == last) {
+        first = last = null;
+        return;
+      }
+      
+      Node prevLast = getPrevious(last);
+      last = prevLast;
+      last.next = null;
+    }
+    private Node getPrevious(Node x) {
+      Node temp = first;
+      while (temp.next != x) {
+        temp = temp.next;
+      }
+      return temp;
     }
 }
